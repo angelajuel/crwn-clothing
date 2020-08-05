@@ -1,16 +1,18 @@
 import React from 'react';
 
+import { withRouter } from 'react-router-dom';
+
 import './menu-item.styles.scss';
 
-// title and imageUrl represent the props so we won't have to call props.title etc
-// we have to pass the image url by using javascript template string
-//   it allows us to dynamically style our components
-const MenuItem = ({id, title, image, size}) => (
-    <div className={`${size} menu-item`}>
+const MenuItem = ({id, title, imageUrl, size, history, linkUrl, match}) => (
+    <div 
+        className={`${size} menu-item`} 
+        onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
         <div 
             className="background-image"
             style={{
-                backgroundImage: `url(${image})`
+                backgroundImage: `url(${imageUrl})`
             }} 
         />
         <div className="content">
@@ -20,4 +22,4 @@ const MenuItem = ({id, title, image, size}) => (
     </div>
 );
 
-export default MenuItem;
+export default withRouter(MenuItem);
