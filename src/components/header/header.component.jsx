@@ -2,7 +2,7 @@ import React from 'react';
 // import Link for logo routing to homepage on click
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Logo} from '../../assets/crown.svg';
+import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
@@ -14,7 +14,8 @@ const Header = () => (
         <div className='options'>
             <Link className='option' to='/shop'>SHOP</Link>
             <Link className='option' to='/shop'>CONTACT</Link>
-            </div>
+            <Link className='option' to='/signin'>SIGN IN</Link>
+        </div>
     </div>
 );
 
