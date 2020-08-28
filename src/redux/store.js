@@ -13,6 +13,8 @@ import rootReducer from './root-reducer';
 const middlewares = [logger];
 
 // spread in all the methods in the middelwares array into the function call as individual arguments in applyMiddleware
-const store= createStore(rootReducer, applyMiddleware(...middlewares));
+const store= createStore(rootReducer, 
+    applyMiddleware(...middlewares)
+    );
 
 export default store;
